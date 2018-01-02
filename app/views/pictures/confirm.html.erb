@@ -1,0 +1,23 @@
+<h3>以下の内容で、アップロードします</h3>
+
+<%= form_with(model: @picture, url: pictures_path, local: true) do |f| %>
+  <%= f.hidden_field :image %>
+  <%= hidden_field_tag :"cache[image]", @picture.image.cache_name %>
+  <%= f.hidden_field :caption %>
+
+  <p><%= image_tag(@picture.image.url) %></p>
+  <p>キャプション：</p>
+  <p><%= @picture.caption %></p>
+
+  <br>
+  <br>
+
+  <%= f.submit %>
+<% end %>
+<br>
+<%= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |f| %>
+  <%= f.hidden_field :image %>
+  <%= f.hidden_field :caption %>
+  <%= hidden_field_tag :"cache[image]",@picture.image.cache_name %>
+  <%= f.submit '戻る', name: 'back' %>
+<% end %>

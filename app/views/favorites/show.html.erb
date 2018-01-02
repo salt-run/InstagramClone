@@ -1,0 +1,8 @@
+<h4>私のお気に入り</h4>
+<% @favorite_pictures.each do |favorite_picture| %>
+　<p>（ユーザ名：<%= favorite_picture.user.name %>）</p>
+  <p><%= image_tag favorite_picture.image %></p>
+  <p>キャプション：<%= favorite_picture.caption %></p>
+  <!--<p>タイトル：<%#= link_to favorite_picture.caption, picture_path(favorite_picture.id) %></p>-->
+
+<% end %>

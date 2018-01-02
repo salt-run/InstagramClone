@@ -1,0 +1,16 @@
+<%= form_with(model: @picture, local:true, url: choose_new_or_edit) do |f| %>
+
+  <h3>Pictureを選択してください</h3>
+  <div class="picture_field">
+    <%= f.file_field :image, id: :picture_image %>
+    <%= f.hidden_field :image_chche %>
+  </div>
+  <br>
+  <br>
+  <div class="title">
+    <%= f.text_area :caption, :size=>"60x5", :placeholder=>"キャプションを書く" %>
+  </div>
+  <br>
+
+  <%= f.submit %>
+<% end %>

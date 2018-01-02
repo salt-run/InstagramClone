@@ -30,9 +30,9 @@
                 <li class="active"><a href="<%= tops_path %>"><span class="glyphicon glyphicon-home"></span>ホーム</a></li>
                 <% if logged_in? %>
                   <li><a href="<%= user_path(current_user.id) %>"><span class="glyphicon glyphicon-file"></span>マイページ</a></li>
-                  <li><a href="<%= new_picture_path %>"><span class="glyphicon glyphicon-file"></span>Pictureを投稿</a></li>
-                  <li><a href="<%= pictures_path %>"><span class="glyphicon glyphicon-file"></span>Picture一覧</a></li>
-                  <li><a href="<%= favorite_path(current_user.id) %>"><span class="glyphicon glyphicon-file"></span>お気に入り一覧</a></li>
+                  <li><a href="<%= new_picture_path %>"><span class="glyphicon glyphicon-pencil"></span>Pictureを投稿</a></li>
+                  <li><a href="<%= pictures_path %>"><span class="glyphicon glyphicon-th-list"></span>Picture一覧</a></li>
+                  <li><a href="<%= favorite_path(current_user.id) %>"><span class="glyphicon glyphicon-star-empty"></span>お気に入り一覧</a></li>
                   <li><a href="<%= session_path(current_user.id) %>" data-method="delete" rel="nofollow" data-confirm="Are you sure?"><span class="glyphicon glyphicon-book"></span>ログアウト</a></li>
 
                 <% else %>

@@ -8,4 +8,12 @@ module PicturesHelper
     end
   end
 
+  def user_favorite_picture?(picture_id)
+    if current_user.favorites.present?
+      current_user.favorites.find_by(picture_id: picture_id)
+    else
+      nil
+    end
+  end
+
 end
